@@ -1,0 +1,208 @@
+/* ctrl +; = abre comentario no CSS quanto no HTML */
+
+/* 
+Sintaxe 
+
+Seletor {
+    Propriedade : valor;
+}
+*/
+/* para trabalhar o iD das tags aqui no css se usa
+#id {
+
+    propriedade:valor;
+}
+*/
+
+/* Zerar ou aumentar margem em todo o HTML pelo  css
+
+*{
+    margin:0;
+    padding:0;
+}
+
+/* variaveis no css 
+
+:root {
+    --nomeVarivael: valor;
+}
+*/
+
+:root {
+    /* sintaxe de variael no css */
+    --primary: #225C72;
+    --contrast: #162c41;
+    --secondary: #2775A6;
+    --gray-light: #eeeeee;
+    --gray: #666666;
+    --blue: #73B3D9;
+}
+
+body {
+    height: 100vh;
+    margin: 0;
+    background-color: var(--primary);
+    /* background-image: url(../img/bodyfundo.png); */
+    background-image: linear-gradient(var(--gray-light), var(--contrast), var(--gray));
+    font-family: 'Roboto', sans-serif;
+}
+
+img {
+    width: 100px;
+    border-radius: 50%;
+    /* arredonda a imagem por que o seletor ta em imagem e se for quadrada */
+    border-width: 5px;
+    /*largura */
+    border-color: var(--blue);
+    /* cor da borda da imagem com variavel */
+    border-style: solid;
+    /*stilo da borda da foto */
+
+    /*border: solid 5px var(--primary); forma de colocar todos os valores da propriedade border dentro de uma
+    unica linha */
+}
+
+div {
+    width: 70%;
+    /*Largura total da div  ( 340px do max width + 30 + 30 do padding = 400px */
+    max-width: 340px;
+    /*largura max que a div pode assumir em todas as telas pc , celular */
+    height: auto;
+    /*altura*/
+    background-color: var(--gray-light);
+    /* cor de fundo */
+    /*margin-left:auto;
+    margin-right: auto;
+    margin-top: 100px;*/
+
+    margin: 50px auto;
+    /* espaçamento externo */
+    padding: 30px;
+    /* padding espaçamento interno */
+    text-align: center;
+    border-radius: 3px;
+    /*arredondadamento a borda do seletor */
+    overflow: hidden;
+    /*esconde a barra de rolagem*/
+}
+
+h1 {
+    color: var(--cor2);
+    margin-top: 20px;
+    font-size: 32px;
+    font-weight: 700;
+    /*peso  da letra e por padrão 700 ja é negrito */
+    color: var(--contrast);
+}
+
+h2 {
+    margin-top: 0;
+    margin-bottom: 0;
+    color: var(--secondary);
+    font-size: 20px;
+}
+
+ul {
+    padding: 0;
+    list-style-type: none;
+    margin-top: 40px;
+    margin-bottom: 30px;
+}
+
+li {
+    margin-bottom: 5px;
+}
+
+#app {
+
+    display: none;
+}
+
+ul a {
+    background-color: var(--primary);
+    color: white;
+    /* para fazer o link virar botão tem que transformar ele em bloco */
+    display: block;
+    /* elementos em linha ( inline) dividem a mesma linha elementos em block ocupam a linha inteira */
+    padding: 10px 0;
+    /* primeiro valor vertical, segundo horizontal*/
+    text-decoration: none;
+    border-radius: 3px 5px;
+
+}
+
+/* a passar o mouse muda de cor exemplo, botão, titulo, texto .é so definir
+sintaxe =  seletor : hover{
+       propriedade : valor;
+}
+*/
+
+/* ul a significa que os filhos daquele elemento, exemplo UL seria pai de a
+/* dessa forma vc consegue isolar as formatações */
+ul a:hover {
+    background-color: var(--contrast);
+}
+
+p {
+    margin-top: 10px;
+    color: var(--gray);
+}
+
+a {
+    color: var(--primary);
+}
+
+/* 
+fonts.google.com  para achar fontes boas e linkar elas , n precisa mais baixar as fontes 
+*/
+
+/* Media Query 
+/* media queria é as condicionais no css, pode ter varias Media Query dentro do CSS, 
+geralmente sao ate 3 Media Query , uma pra celular ,computador e tablet, tudo relacionado
+a tamanho de tela para adaptação das diferentes tamanhos de tela */
+
+/*Sintaxe 
+@media (propriedade : valor ){
+
+#id{
+    propriedade : valor;
+}
+    tag{
+        propriedade : valor;
+    }
+    seletor {
+        propriedade : valor;
+    }
+}
+
+*/
+@media (max-width: 768px) {
+
+    /* quando a largura passar de 768px o botão baixe o app SOME*/
+    #app {
+        display: block;
+        /* o botão aparece em telas menores que 768px*/
+    }
+
+    body {
+
+        overflow: auto;
+        /* a barra de rolagem aparece somente em displays menores que 768px*/
+    }
+}
+
+@media (max-width: 600px) {
+
+    img {
+        width: 80px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    body {
+        background-image: linear-gradient( var(--gray), var(--gray-light));
+    }
+
+}
