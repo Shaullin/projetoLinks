@@ -202,7 +202,7 @@ a tamanho de tela para adaptação das diferentes tamanhos de tela */
     }
 
     body {
-        background-image: linear-gradient( var(--gray), var(--gray-light));
+        background-image: linear-gradient(var(--gray), var(--gray-light));
     }
 
 }
